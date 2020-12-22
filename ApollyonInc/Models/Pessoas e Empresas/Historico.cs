@@ -10,7 +10,7 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
     public class Historico
     {
         [Display(Name = "ID")]
-        public int IdHistorico { get; set; }
+        public int Id { get; set; }
         [Display(Name = "ID Ext")]
         public Historico Historicos { get; set; }
         public Tipo_De_Historico Tipo_De_Historico { get; set; }
@@ -23,9 +23,9 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         {
         }
 
-        public Historico(int idHistorico, Historico historicos, Tipo_De_Historico tipo_De_Historico, DateTime data, string historicoTEXTO)
+        public Historico(int id, Historico historicos, Tipo_De_Historico tipo_De_Historico, DateTime data, string historicoTEXTO)
         {
-            IdHistorico = idHistorico;
+            Id = id;
             Historicos = historicos;
             Tipo_De_Historico = tipo_De_Historico;
             Data = data;

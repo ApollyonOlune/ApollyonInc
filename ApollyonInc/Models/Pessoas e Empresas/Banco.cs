@@ -8,7 +8,8 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
 {
     public class Banco
     {
-        public int IdBancos { get; set; }
+        
+        public int Id { get; set; }
         public Banco Bancos { get; set; }
         [Display(Name = "Código do Banco")]
         public int CodigoBanco { get; set; }
@@ -19,9 +20,9 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         {
         }
 
-        public Banco(int idBancos, Banco bancos, int codigoBanco, string nomeDoBanco)
+        public Banco(int id, Banco bancos, int codigoBanco, string nomeDoBanco)
         {
-            IdBancos = idBancos;
+            Id = id;
             Bancos = bancos;
             CodigoBanco = codigoBanco;
             NomeDoBanco = nomeDoBanco;

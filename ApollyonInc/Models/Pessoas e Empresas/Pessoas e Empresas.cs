@@ -11,7 +11,7 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
     public class Pessoas_e_Empresas
     {
         [Display(Name = "ID")]
-        public int IdPessoasEEmpresas { get; set; }
+        public int Id { get; set; }
         [Display(Name = "Cliente Bloqueado")]
         public bool ClienteBloqueado { get; set; }
         public bool Cliente { get; set; }
@@ -93,9 +93,9 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         public ICollection<Contato> Contatos { get; set; }
 
         //Construtores
-        public Pessoas_e_Empresas(int idPessoasEEmpresas, bool clienteBloqueado, bool cliente, bool pessoaFisica, bool pessoaJuridica, bool fornecedor, bool funcionario, DateTime dataDeCadastro, Status status, bool nomeSocial, string nomeSocialTXT, string nomeRazaoSocial, string apelidoNomeFantasia, string cPFCNPJ, Indicador_da_IE_do_Destinatário indicadorDaIEDoDestinatario, string rGInscricaoEstadual, string inscricaoMunicipal, string emissorDoRG, string uFDoEmissor, Sexo sexo, DateTime aniversario, string telefone, string celular, string email, string emailParaNFE, string site, string observacao, decimal limiteDeCredito, bool issRetidoNaFonte, bool consumidorFinal, bool produtorRural, bool serasa)
+        public Pessoas_e_Empresas(int id, bool clienteBloqueado, bool cliente, bool pessoaFisica, bool pessoaJuridica, bool fornecedor, bool funcionario, DateTime dataDeCadastro, Status status, bool nomeSocial, string nomeSocialTXT, string nomeRazaoSocial, string apelidoNomeFantasia, string cPFCNPJ, Indicador_da_IE_do_Destinatário indicadorDaIEDoDestinatario, string rGInscricaoEstadual, string inscricaoMunicipal, string emissorDoRG, string uFDoEmissor, Sexo sexo, DateTime aniversario, string telefone, string celular, string email, string emailParaNFE, string site, string observacao, decimal limiteDeCredito, bool issRetidoNaFonte, bool consumidorFinal, bool produtorRural, bool serasa)
         {
-            IdPessoasEEmpresas = idPessoasEEmpresas;
+            Id = id;
             ClienteBloqueado = clienteBloqueado;
             Cliente = cliente;
             PessoaFisica = pessoaFisica;

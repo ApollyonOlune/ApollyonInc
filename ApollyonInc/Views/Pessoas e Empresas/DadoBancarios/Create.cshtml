@@ -1,0 +1,63 @@
+﻿@model ApollyonInc.Models.Pessoas_e_Empresas.DadoBancario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DadoBancario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Agencia" class="control-label"></label>
+                <input asp-for="Agencia" class="form-control" />
+                <span asp-validation-for="Agencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DigitoAgencia" class="control-label"></label>
+                <input asp-for="DigitoAgencia" class="form-control" />
+                <span asp-validation-for="DigitoAgencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Conta" class="control-label"></label>
+                <input asp-for="Conta" class="form-control" />
+                <span asp-validation-for="Conta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DigitoConta" class="control-label"></label>
+                <input asp-for="DigitoConta" class="form-control" />
+                <span asp-validation-for="DigitoConta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Observacoes" class="control-label"></label>
+                <input asp-for="Observacoes" class="form-control" />
+                <span asp-validation-for="Observacoes" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Padrao" /> @Html.DisplayNameFor(model => model.Padrao)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

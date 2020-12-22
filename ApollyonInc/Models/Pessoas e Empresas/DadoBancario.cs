@@ -8,7 +8,7 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
 {
     public class DadoBancario
     {
-        public int IdDadosBancarios { get; set; }
+        public int Id { get; set; }
         public DadoBancario DadosBancarios { get; set; }
         public ICollection<Banco> Bancos { get; set; }
         [Display(Name = "Agência")]
@@ -27,9 +27,9 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         {
         }
 
-        public DadoBancario(int idDadosBancarios, DadoBancario dadosBancarios, string agencia, string digitoAgencia, string conta, string digitoConta, string observacoes, bool ativo, bool padrao)
+        public DadoBancario(int id, DadoBancario dadosBancarios, string agencia, string digitoAgencia, string conta, string digitoConta, string observacoes, bool ativo, bool padrao)
         {
-            IdDadosBancarios = idDadosBancarios;
+            Id = id;
             DadosBancarios = dadosBancarios;
             Agencia = agencia;
             DigitoAgencia = digitoAgencia;

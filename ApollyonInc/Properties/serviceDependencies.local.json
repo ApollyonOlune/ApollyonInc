@@ -10,6 +10,10 @@
     },
     "appInsights1": {
       "type": "appInsights.sdk"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "ApollyonIncContext"
     }
   }
 }

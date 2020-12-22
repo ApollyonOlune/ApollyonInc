@@ -8,7 +8,7 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
 {
     public class Contato
     {
-        public int IdContato { get; set; }
+        public int Id { get; set; }
         public Contato Contatos { get; set; }
         public string Nome { get; set; }
         public string Cargo { get; set; }
@@ -22,9 +22,9 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         {
         }
 
-        public Contato(int idContato, Contato contatos, string nome, string cargo, string telefone, string email, bool ativo)
+        public Contato(int id, Contato contatos, string nome, string cargo, string telefone, string email, bool ativo)
         {
-            IdContato = idContato;
+            Id = id;
             Contatos = contatos;
             Nome = nome;
             Cargo = cargo;

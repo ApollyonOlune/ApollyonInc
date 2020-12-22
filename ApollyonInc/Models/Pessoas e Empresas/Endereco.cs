@@ -9,7 +9,7 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
 {
     public class Endereco
     {
-        public int IDEndereco { get; set; }
+        public int ID { get; set; }
         public Endereco Enderecos { get; set; }
         [Required(ErrorMessage ="É nescessário que {0} esteja preenchido.")]
         [Display(Name = "CEP")]
@@ -28,9 +28,9 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         {
         }
 
-        public Endereco(int iDEndereco, Endereco enderecos, string cEP, string logradouro, string numero, string complemento, string bairro, string cidade, Estado estado, bool ativo, bool padrao)
+        public Endereco(int iD, Endereco enderecos, string cEP, string logradouro, string numero, string complemento, string bairro, string cidade, Estado estado, bool ativo, bool padrao)
         {
-            IDEndereco = iDEndereco;
+            ID = iD;
             Enderecos = enderecos;
             CEP = cEP;
             Logradouro = logradouro;
