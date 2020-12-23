@@ -3,19 +3,45 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ApollyonInc</title>
+    <title>@ViewData["Title"] - Apollyon Inc</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-warning border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ApollyonInc</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Apollyon Inc</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle-split text-body text-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                        <img src="~/img/rent_25px.png" /> Vendas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/exercise_25px.png" />Venda Rápida</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/conference_foreground_selected_25px.png" />Clientes</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/page_25px.png" />Orçamentos</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/check_25px.png" />Pedidos</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle-split text-body text-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="~/img/technical_support_25px.png" /> HelpDesk
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/new_ticket_25px.png" />Abrir Chamado
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/ticket_purchase_25px.png" />Gerênciar Chamados
+                        </a>
+                    </div>
+                </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -25,6 +51,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Search">
+                        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"><img src="~/img/search_25px.png" />Procurar</button>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -37,7 +67,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - ApollyonInc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2010 á 2020 - ApollyonInc - Todos os direitos Resevados - <a asp-area="" asp-controller="Home" asp-action="Privacy">Política de Privacidade</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
