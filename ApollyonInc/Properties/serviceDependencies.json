@@ -3,12 +3,12 @@
     "secrets1": {
       "type": "secrets"
     },
+    "appInsights1": {
+      "type": "appInsights"
+    },
     "mssql1": {
       "type": "mssql",
       "connectionId": "ApollyonDB"
-    },
-    "appInsights1": {
-      "type": "appInsights"
     },
     "mssql2": {
       "type": "mssql",

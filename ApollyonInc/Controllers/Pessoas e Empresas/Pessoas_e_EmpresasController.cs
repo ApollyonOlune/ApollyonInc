@@ -44,7 +44,7 @@ namespace ApollyonInc.Controllers
         }
 
         // GET: Pessoas_e_Empresas/Create
-        public IActionResult Create()
+        public IActionResult CreatePE()
         {
             return View();
         }
@@ -54,7 +54,7 @@ namespace ApollyonInc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClienteBloqueado,Cliente,PessoaFisica,PessoaJuridica,Fornecedor,Funcionario,DataDeCadastro,Status,NomeSocial,NomeSocialTXT,NomeRazaoSocial,ApelidoNomeFantasia,CPFCNPJ,IndicadorDaIEDoDestinatario,RGInscricaoEstadual,InscricaoMunicipal,EmissorDoRG,UFDoEmissor,Sexo,Aniversario,Telefone,Celular,Email,EmailParaNFE,Site,Observacao,LimiteDeCredito,IssRetidoNaFonte,ConsumidorFinal,ProdutorRural,Serasa")] Pessoas_e_Empresas pessoas_e_Empresas)
+        public async Task<IActionResult> CreatePE([Bind("Id,Cliente,PessoaFisica,PessoaJuridica,DataDeCadastro,Status,NomeSocial,NomeSocialTXT,NomeRazaoSocial,ApelidoNomeFantasia,CPFCNPJ,IndicadorDaIEDoDestinatario,RGInscricaoEstadual,InscricaoMunicipal,EmissorDoRG,UFDoEmissor,Sexo,Aniversario,Telefone,Celular,Email,EmailParaNFE,Site,Observacao,LimiteDeCredito,IssRetidoNaFonte,ConsumidorFinal,ProdutorRural,Serasa")] Pessoas_e_Empresas pessoas_e_Empresas)
         {
             if (ModelState.IsValid)
             {

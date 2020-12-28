@@ -1,76 +1,69 @@
 ﻿@model ApollyonInc.Models.Pessoas_e_Empresas.Pessoas_e_Empresas
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar Cliente";
 }
 
-<h1>Create</h1>
-
-<h4>Pessoas_e_Empresas</h4>
+<h4>Cadastrar Cliente</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="ClienteBloqueado" /> @Html.DisplayNameFor(model => model.ClienteBloqueado)
-                </label>
-            </div>
-            <div class="form-group form-check">
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="form-check form-check-inline">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Cliente" /> @Html.DisplayNameFor(model => model.Cliente)
                 </label>
             </div>
-            <div class="form-group form-check">
+            <div class="form-check form-check-inline">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="PessoaFisica" /> @Html.DisplayNameFor(model => model.PessoaFisica)
                 </label>
             </div>
-            <div class="form-group form-check">
+            <div class="form-check form-check-inline">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="PessoaJuridica" /> @Html.DisplayNameFor(model => model.PessoaJuridica)
                 </label>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Fornecedor" /> @Html.DisplayNameFor(model => model.Fornecedor)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Funcionario" /> @Html.DisplayNameFor(model => model.Funcionario)
-                </label>
-            </div>
-            <div class="form-group">
+            <div class="col-md-3 form-group">
                 <label asp-for="DataDeCadastro" class="control-label"></label>
                 <input asp-for="DataDeCadastro" class="form-control" />
                 <span asp-validation-for="DataDeCadastro" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-3 form-group">
                 <label asp-for="Status" class="control-label"></label>
                 <select asp-for="Status" class="form-control"></select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="form-check form-check-inline">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="NomeSocial" /> @Html.DisplayNameFor(model => model.NomeSocial)
                 </label>
             </div>
-            <div class="form-group">
+            <div class="col-md-9 form-group">
                 <label asp-for="NomeSocialTXT" class="control-label"></label>
                 <input asp-for="NomeSocialTXT" class="form-control" />
                 <span asp-validation-for="NomeSocialTXT" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="NomeRazaoSocial" class="control-label"></label>
-                <input asp-for="NomeRazaoSocial" class="form-control" />
-                <span asp-validation-for="NomeRazaoSocial" class="text-danger"></span>
+        </div>
+        </div>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label asp-for="NomeRazaoSocial" class="control-label"></label>
+                    <input asp-for="NomeRazaoSocial" class="form-control" />
+                    <span asp-validation-for="NomeRazaoSocial" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label asp-for="ApelidoNomeFantasia" class="control-label"></label>
+                    <input asp-for="ApelidoNomeFantasia" class="form-control" />
+                    <span asp-validation-for="ApelidoNomeFantasia" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ApelidoNomeFantasia" class="control-label"></label>
-                <input asp-for="ApelidoNomeFantasia" class="form-control" />
-                <span asp-validation-for="ApelidoNomeFantasia" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CPFCNPJ" class="control-label"></label>
@@ -170,9 +163,7 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-        </form>
-    </div>
-</div>
+</form>
 
 <div>
     <a asp-action="Index">Back to List</a>

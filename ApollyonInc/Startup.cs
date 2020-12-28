@@ -50,6 +50,12 @@ namespace ApollyonInc
 
             app.UseRouting();
 
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
+            }
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

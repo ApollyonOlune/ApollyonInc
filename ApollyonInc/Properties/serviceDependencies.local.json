@@ -3,17 +3,20 @@
     "secrets1": {
       "type": "secrets.user"
     },
+    "appInsights1": {
+      "type": "appInsights.sdk"
+    },
     "mssql1": {
+      "resourceId": null,
       "type": "mssql.onprem",
       "connectionId": "ApollyonDB",
       "secretStore": "LocalSecretsFile"
     },
-    "appInsights1": {
-      "type": "appInsights.sdk"
-    },
     "mssql2": {
+      "resourceId": null,
       "type": "mssql.local",
-      "connectionId": "ApollyonIncContext"
+      "connectionId": "ApollyonIncContext",
+      "secretStore": "LocalSecretsFile"
     }
   }
 }
