@@ -46,15 +46,12 @@ namespace ApollyonInc
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
-            }
+            app.UseBrowserLink();
 
             app.UseAuthorization();
 
