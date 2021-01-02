@@ -1,4 +1,5 @@
 ﻿using ApollyonInc.Models.Pessoas_e_Empresas.Enums;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -30,14 +31,13 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         public Status Status { get; set; }
         [Display(Name = "Nome Social")]
         public bool NomeSocial { get; set; }
-        [Display(Name = "Nome Social")]
-        public string NomeSocialTXT { get; set; }
         [Required(ErrorMessage = "É nescessário que {0} esteja preenchido.")]
         [Display(Name = "Nome/Razão Social")]
         public string NomeRazaoSocial { get; set; }
         [Required(ErrorMessage = "É nescessário que {0} esteja preenchido.")]
         [Display(Name = "Apelido/Nome Fantasia")]
         public string ApelidoNomeFantasia { get; set; }
+        [Remote("CPFCNPJExiste", "Clientes")]
         [Required(ErrorMessage = "É nescessário que {0} esteja preenchido.")]
         [Display(Name = "CPF/CNPJ")]
         public string CPFCNPJ { get; set; }
@@ -93,7 +93,7 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         public ICollection<Contato> Contatos { get; set; }
 
         //Construtores
-        public Pessoas_e_Empresas(int id, bool clienteBloqueado, bool cliente, bool pessoaFisica, bool pessoaJuridica, bool fornecedor, bool funcionario, DateTime dataDeCadastro, Status status, bool nomeSocial, string nomeSocialTXT, string nomeRazaoSocial, string apelidoNomeFantasia, string cPFCNPJ, Indicador_da_IE_do_Destinatário indicadorDaIEDoDestinatario, string rGInscricaoEstadual, string inscricaoMunicipal, string emissorDoRG, string uFDoEmissor, Sexo sexo, DateTime aniversario, string telefone, string celular, string email, string emailParaNFE, string site, string observacao, decimal limiteDeCredito, bool issRetidoNaFonte, bool consumidorFinal, bool produtorRural, bool serasa)
+        public Pessoas_e_Empresas(int id, bool clienteBloqueado, bool cliente, bool pessoaFisica, bool pessoaJuridica, bool fornecedor, bool funcionario, DateTime dataDeCadastro, Status status, bool nomeSocial, string nomeRazaoSocial, string apelidoNomeFantasia, string cPFCNPJ, Indicador_da_IE_do_Destinatário indicadorDaIEDoDestinatario, string rGInscricaoEstadual, string inscricaoMunicipal, string emissorDoRG, string uFDoEmissor, Sexo sexo, DateTime aniversario, string telefone, string celular, string email, string emailParaNFE, string site, string observacao, decimal limiteDeCredito, bool issRetidoNaFonte, bool consumidorFinal, bool produtorRural, bool serasa)
         {
             Id = id;
             ClienteBloqueado = clienteBloqueado;
@@ -105,7 +105,6 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
             DataDeCadastro = dataDeCadastro;
             Status = status;
             NomeSocial = nomeSocial;
-            NomeSocialTXT = nomeSocialTXT;
             NomeRazaoSocial = nomeRazaoSocial;
             ApelidoNomeFantasia = apelidoNomeFantasia;
             CPFCNPJ = cPFCNPJ;

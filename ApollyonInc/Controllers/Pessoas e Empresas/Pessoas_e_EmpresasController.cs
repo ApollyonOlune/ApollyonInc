@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ApollyonInc.Data;
 using ApollyonInc.Models.Pessoas_e_Empresas;
+using X.PagedList;
 
 namespace ApollyonInc.Controllers
 {
@@ -19,9 +20,31 @@ namespace ApollyonInc.Controllers
             _context = context;
         }
 
-        // GET: Pessoas_e_Empresas
-        public async Task<IActionResult> Index()
+        //Verficar se Cliente Já está Cadastrado
+
+        public async Task<JsonResult> CPFCNPJExisteAsync(string cpfcnpj)
         {
+            if (await _context.Pessoas_e_Empresas.AnyAsync(x => x.CPFCNPJ == cpfcnpj))
+                return Json("CPF ou CNPJ já cadastrado no sistema!");
+            return Json(true);
+        }
+
+        // GET: Pessoas_e_Empresas
+        public async Task<IActionResult> Index(int? pagina)
+        {
+            const int itensPorPagina = 10;
+            int numeroPagina = (pagina ?? 1);
+            return View(await _context.Pessoas_e_Empresas.ToPagedListAsync(numeroPagina, itensPorPagina));
+        }
+        
+        [HttpPost]
+        //Procura de Pessoas e empresas no Index
+        public async Task<IActionResult> Index(string txtProcurar)
+        {
+            if (!String.IsNullOrEmpty(txtProcurar))
+            {
+                return View(await _context.Pessoas_e_Empresas.Where(x => x.NomeRazaoSocial.ToUpper().Contains(txtProcurar.ToUpper())).ToListAsync());
+            }
             return View(await _context.Pessoas_e_Empresas.ToListAsync());
         }
 
@@ -54,7 +77,7 @@ namespace ApollyonInc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreatePE([Bind("Id,Cliente,PessoaFisica,PessoaJuridica,DataDeCadastro,Status,NomeSocial,NomeSocialTXT,NomeRazaoSocial,ApelidoNomeFantasia,CPFCNPJ,IndicadorDaIEDoDestinatario,RGInscricaoEstadual,InscricaoMunicipal,EmissorDoRG,UFDoEmissor,Sexo,Aniversario,Telefone,Celular,Email,EmailParaNFE,Site,Observacao,LimiteDeCredito,IssRetidoNaFonte,ConsumidorFinal,ProdutorRural,Serasa")] Pessoas_e_Empresas pessoas_e_Empresas)
+        public async Task<IActionResult> CreatePE([Bind("Id,Cliente,PessoaFisica,PessoaJuridica,DataDeCadastro,Status,NomeSocial,NomeRazaoSocial,ApelidoNomeFantasia,CPFCNPJ,IndicadorDaIEDoDestinatario,RGInscricaoEstadual,InscricaoMunicipal,EmissorDoRG,UFDoEmissor,Sexo,Aniversario,Telefone,Celular,Email,EmailParaNFE,Site,Observacao,LimiteDeCredito,IssRetidoNaFonte,ConsumidorFinal,ProdutorRural,Serasa")] Pessoas_e_Empresas pessoas_e_Empresas)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +109,7 @@ namespace ApollyonInc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ClienteBloqueado,Cliente,PessoaFisica,PessoaJuridica,Fornecedor,Funcionario,DataDeCadastro,Status,NomeSocial,NomeSocialTXT,NomeRazaoSocial,ApelidoNomeFantasia,CPFCNPJ,IndicadorDaIEDoDestinatario,RGInscricaoEstadual,InscricaoMunicipal,EmissorDoRG,UFDoEmissor,Sexo,Aniversario,Telefone,Celular,Email,EmailParaNFE,Site,Observacao,LimiteDeCredito,IssRetidoNaFonte,ConsumidorFinal,ProdutorRural,Serasa")] Pessoas_e_Empresas pessoas_e_Empresas)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ClienteBloqueado,Cliente,PessoaFisica,PessoaJuridica,Fornecedor,Funcionario,DataDeCadastro,Status,NomeSocial,NomeRazaoSocial,ApelidoNomeFantasia,CPFCNPJ,IndicadorDaIEDoDestinatario,RGInscricaoEstadual,InscricaoMunicipal,EmissorDoRG,UFDoEmissor,Sexo,Aniversario,Telefone,Celular,Email,EmailParaNFE,Site,Observacao,LimiteDeCredito,IssRetidoNaFonte,ConsumidorFinal,ProdutorRural,Serasa")] Pessoas_e_Empresas pessoas_e_Empresas)
         {
             if (id != pessoas_e_Empresas.Id)
             {

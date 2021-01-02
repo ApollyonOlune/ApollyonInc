@@ -1,214 +1,63 @@
-﻿@model IEnumerable<ApollyonInc.Models.Pessoas_e_Empresas.Pessoas_e_Empresas>
+﻿@model X.PagedList.IPagedList<ApollyonInc.Models.Pessoas_e_Empresas.Pessoas_e_Empresas>
+@using X.PagedList.Mvc.Core
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Gerênciar Clientes";
 }
 
-<h1>Index</h1>
+<h1>Gerênciar Clientes</h1>
+@*Pesquisa*@
+<form asp-controller="Pessoas_e_EmpresasController" asp-action="Index" method="post">
+    <input class="form-control" name="txtProcurar" type="search" placeholder="Procurar" aria-label="Search">
+    <button class="btn btn-dark" type="submit">Procurar</button>
+</form>
 
 <p>
-    <a asp-action="CreatePE">Create New</a>
+    <a class="btn btn-primary" asp-action="CreatePE">Cadastrar Cliente</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ClienteBloqueado)
+                ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cliente)
+                Status
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PessoaFisica)
+                Nome/Razao Social
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PessoaJuridica)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fornecedor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Funcionario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataDeCadastro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeSocial)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeSocialTXT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeRazaoSocial)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApelidoNomeFantasia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CPFCNPJ)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IndicadorDaIEDoDestinatario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RGInscricaoEstadual)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InscricaoMunicipal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmissorDoRG)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UFDoEmissor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sexo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Aniversario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Celular)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmailParaNFE)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Site)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Observacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LimiteDeCredito)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IssRetidoNaFonte)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ConsumidorFinal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProdutorRural)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Serasa)
+                CPF/CNPJ
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClienteBloqueado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cliente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PessoaFisica)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PessoaJuridica)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fornecedor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Funcionario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDeCadastro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeSocial)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeSocialTXT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeRazaoSocial)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApelidoNomeFantasia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CPFCNPJ)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IndicadorDaIEDoDestinatario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RGInscricaoEstadual)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InscricaoMunicipal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmissorDoRG)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UFDoEmissor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sexo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Aniversario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Celular)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailParaNFE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Site)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LimiteDeCredito)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IssRetidoNaFonte)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConsumidorFinal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProdutorRural)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Serasa)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeRazaoSocial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CPFCNPJ)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        <img src="~/img/search_25px.png" />Visualizar
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@Html.PagedListPager(Model, pagina => Url.Action("Index", new {pagina}))
