@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ApollyonInc.Models.Pessoas_e_Empresas.Enums
 {
-    public enum Indicador_da_IE_do_Destinatário
+    public enum Indicador_da_IE_do_Destinatário: int
     {
         [Display(Name = "Não Contrinbuinte")]
-        NC,
+        NC = 0,
         [Display(Name = "Contrinbuinte do ICMS")]
-        CI,
+        CI = 1,
         [Display(Name = "Contrinbuinte Insento de Inscrição")]
-        CII,
+        CII = 2
     }
 }

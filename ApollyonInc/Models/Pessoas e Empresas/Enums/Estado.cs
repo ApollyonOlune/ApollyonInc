@@ -6,59 +6,59 @@ using System.Threading.Tasks;
 
 namespace ApollyonInc.Models.Pessoas_e_Empresas.Enums
 {
-    public enum Estado
+    public enum Estado : int
     {
         [Display(Name = "Acre")]
-        AC,
+        AC =0,
         [Display(Name = "Alagoas")]
-        AL,
+        AL =1,
         [Display(Name = "Amapá")]
-        AP,
+        AP=2,
         [Display(Name = "Amazonas")]
-        AM,
+        AM =3,
         [Display(Name = "Bahia")]
-        BA,
+        BA =4,
         [Display(Name = "Ceará")]
-        CE,
+        CE=5,
         [Display(Name = "Espírito Santo")]
-        ES,
+        ES=6,
         [Display(Name = "Goiás")]
-        GO,
+        GO=7,
         [Display(Name = "Maranhão")]
-         MA,
+        MA=8,
         [Display(Name = "Mato Grosso")]
-        MT,
+        MT=9,
         [Display(Name = "Mato Grosso do Sul")]
-        MS,
+        MS=10,
         [Display(Name = "Minas Gerais")]
-        MG,
+        MG=11,
         [Display(Name = "Pará")]
-        PA,
+        PA=12,
         [Display(Name = "Paraíba")]
-        PB,
+        PB=13,
         [Display(Name = "Paraná")]
-        PR,
+        PR=14,
         [Display(Name = "Pernambuco")]
-        PE,
+        PE=15,
         [Display(Name = "Piauí")]
-        PI,
+        PI=16,
         [Display(Name = "Rio de Janeiro")]
-        RJ,
+        RJ=17,
         [Display(Name = "Rio Grande do Norte")]
-        RN,
+        RN=18,
         [Display(Name = "Rio Grande do Sul")]
-        RS,
+        RS=19,
         [Display(Name = "Rondônia")]
-        RO,
+        RO=20,
         [Display(Name = "Roraima")]
-        RR,
+        RR=21,
         [Display(Name = "Santa Catarina")]
-        SC,
+        SC=22,
         [Display(Name = "São Paulo")]
-        SP,
+        SP=23,
         [Display(Name = "Sergipe")]
-        SE,
+        SE=24,
         [Display(Name = "Tocantins")]
-        TO,
+        TO=25
     }
 }

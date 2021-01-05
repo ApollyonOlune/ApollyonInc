@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace ApollyonInc.Models.Pessoas_e_Empresas.Enums
 {
-    public enum Tipo_De_Historico
+    public enum Tipo_De_Historico : int
     {
-        Documento,
-        Contrato,
+        Documento = 0,
+        Contrato = 1
     }
 }

@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace ApollyonInc.Models.Pessoas_e_Empresas.Enums
 {
-    public enum Sexo
+    public enum Sexo: int
     {
-        F,
-        M,
-        Outro,
+        F = 0,
+        M = 1,
+        Outro = 2
     }
 }

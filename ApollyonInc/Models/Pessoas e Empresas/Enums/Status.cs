@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace ApollyonInc.Models.Pessoas_e_Empresas.Enums
 {
-    public enum Status
+    public enum Status : int
     {
-        Ativo,
-        Cancelado,
+        Ativo = 0,
+        Cancelado = 1
     }
 }
