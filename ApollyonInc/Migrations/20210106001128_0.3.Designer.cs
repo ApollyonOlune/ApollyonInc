@@ -4,14 +4,16 @@ using ApollyonInc.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApollyonInc.Migrations
 {
     [DbContext(typeof(ApollyonIncContext))]
-    partial class ApollyonIncContextModelSnapshot : ModelSnapshot
+    [Migration("20210106001128_0.3")]
+    partial class _03
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

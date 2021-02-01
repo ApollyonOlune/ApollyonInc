@@ -51,7 +51,7 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         [Display(Name = "Emissor do RG")]
         public string EmissorDoRG { get; set; }
         [Display(Name = "UF Do Emissor")]
-        public string UFDoEmissor { get; set; }
+        public UF UFDoEmissor { get; set; }
         public Sexo Sexo { get; set; }
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
@@ -65,7 +65,7 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         public string Email { get; set; }
         [Required(ErrorMessage = "É nescessário que {0} esteja preenchido.")]
         [DataType(DataType.EmailAddress)]
-        [Display(Name = "E-Mail para NFE")]
+        [Display(Name = "E-Mail para NF-E")]
         public string EmailParaNFE { get; set; }
         public string Site { get; set; }
         [Display(Name = "Observação")]
@@ -93,7 +93,7 @@ namespace ApollyonInc.Models.Pessoas_e_Empresas
         public ICollection<Contato> Contatos { get; set; }
 
         //Construtores
-        public Pessoas_e_Empresas(int id, bool clienteBloqueado, bool cliente, bool pessoaFisica, bool pessoaJuridica, bool fornecedor, bool funcionario, DateTime dataDeCadastro, Status status, bool nomeSocial, string nomeRazaoSocial, string apelidoNomeFantasia, string cPFCNPJ, Indicador_da_IE_do_Destinatário indicadorDaIEDoDestinatario, string rGInscricaoEstadual, string inscricaoMunicipal, string emissorDoRG, string uFDoEmissor, Sexo sexo, DateTime aniversario, string telefone, string celular, string email, string emailParaNFE, string site, string observacao, decimal limiteDeCredito, bool issRetidoNaFonte, bool consumidorFinal, bool produtorRural, bool serasa)
+        public Pessoas_e_Empresas(int id, bool clienteBloqueado, bool cliente, bool pessoaFisica, bool pessoaJuridica, bool fornecedor, bool funcionario, DateTime dataDeCadastro, Status status, bool nomeSocial, string nomeRazaoSocial, string apelidoNomeFantasia, string cPFCNPJ, Indicador_da_IE_do_Destinatário indicadorDaIEDoDestinatario, string rGInscricaoEstadual, string inscricaoMunicipal, string emissorDoRG, UF uFDoEmissor, Sexo sexo, DateTime aniversario, string telefone, string celular, string email, string emailParaNFE, string site, string observacao, decimal limiteDeCredito, bool issRetidoNaFonte, bool consumidorFinal, bool produtorRural, bool serasa)
         {
             Id = id;
             ClienteBloqueado = clienteBloqueado;
